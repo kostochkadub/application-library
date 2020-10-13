@@ -33,14 +33,18 @@ class UserServiceTest {
 
     @Test
     void addNotValidNewUser() {
-        String testUserBob = "Bob123 32 bob32@gmail.com";
+        String testUserBob = "Bob12 32 bob32@gmail.com";
         String testUserAlex = "Alex 1111 alex12@mail.ru";
-        String testUserTao = "Alex 1111 alex12mail.ru";
+        String testUserTao = "Tao 56 tao56mail.ru";
 
-        userService.addNewUserFromString(testUserBob);
-        userService.addNewUserFromString(testUserTao);
-        List<User> user = userService.addNewUserFromString(testUserAlex);
 
+        List<User> user = userService.addNewUserFromString(testUserBob);
+        Assertions.assertEquals(null, user);
+
+        user = userService.addNewUserFromString(testUserTao);
+        Assertions.assertEquals(null, user);
+
+        user = userService.addNewUserFromString(testUserAlex);
         Assertions.assertEquals(null, user);
     }
 
