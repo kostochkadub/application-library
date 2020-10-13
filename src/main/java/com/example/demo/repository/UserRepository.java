@@ -14,9 +14,7 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findAllByAgeGreaterThan(int minAge);
-
     List<User> findAllByAgeBetween(int minAge, int maxAge);
-
     List<User> deleteByName(String name);
 
     @Modifying
