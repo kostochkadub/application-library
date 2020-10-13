@@ -46,12 +46,4 @@ class UserServiceTest {
         Assertions.assertEquals(null, user);
     }
 
-
-    private List<User> getUserCollection() {
-        ArrayList<User> userCollection = new ArrayList<>();
-        userCollection.add(new User(1L, "Pasha", 10, "pashka@mail.ru"));
-        userCollection.add(new User(2L, "Masha", 25, "mashka@mail.ru"));
-        return userCollection;
-    }
-
 }
