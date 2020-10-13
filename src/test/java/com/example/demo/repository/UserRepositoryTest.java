@@ -46,9 +46,12 @@ class UserRepositoryTest {
         List<User> userList = getUserCollection();
         userRepository.saveAll(userList);
 
-        List<User> userDeleteByName = userRepository.deleteByName("Pasha");
+        List<User> userDeleteByName = userRepository.findAll();
+        Assertions.assertEquals( 10, userDeleteByName.size());
 
+        userRepository.deleteByName("Pasha");
 
+        userDeleteByName = userRepository.findAll();
         Assertions.assertEquals( 9, userDeleteByName.size());
         System.out.println(userDeleteByName);
 
@@ -57,16 +60,16 @@ class UserRepositoryTest {
 
     private List<User> getUserCollection() {
         ArrayList<User> userCollection= new ArrayList<>();
-        userCollection.add(new User(1L, "Pasha", 10, "pashka@mail.ru"));
-        userCollection.add(new User(2L, "Masha",25, "mashka@mail.ru"));
-        userCollection.add(new User(3L, "Sasha",30, "sashka@mail.ru"));
-        userCollection.add(new User(4L, "user4",45, "user4@mail.ru"));
-        userCollection.add(new User(5L, "user5",27, "user5@mail.ru"));
-        userCollection.add(new User(6L, "user6",24, "user6@mail.ru"));
-        userCollection.add(new User(7L, "user7",22, "user7@mail.ru"));
-        userCollection.add(new User(8L, "user8",26, "user8@mail.ru"));
-        userCollection.add(new User(9L, "user9",20, "user9@mail.ru"));
-        userCollection.add(new User(10L, "user10",15, "user10@mail.ru"));
+        userCollection.add(new User(null, "Pasha", 10, "pashka@mail.ru"));
+        userCollection.add(new User(null, "Masha",25, "mashka@mail.ru"));
+        userCollection.add(new User(null, "Sasha",30, "sashka@mail.ru"));
+        userCollection.add(new User(null, "user4",45, "user4@mail.ru"));
+        userCollection.add(new User(null, "user5",27, "user5@mail.ru"));
+        userCollection.add(new User(null, "user6",24, "user6@mail.ru"));
+        userCollection.add(new User(null, "user7",22, "user7@mail.ru"));
+        userCollection.add(new User(null, "user8",26, "user8@mail.ru"));
+        userCollection.add(new User(null, "user9",20, "user9@mail.ru"));
+        userCollection.add(new User(null, "user10",15, "user10@mail.ru"));
 
         return userCollection;
     }

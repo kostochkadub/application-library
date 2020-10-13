@@ -16,8 +16,8 @@ public class User {
     private int age;
     private String email;
 
-    public User() {
-        super();
+    public User(){
+
     }
 
     public User(Long id, String name, int age, String email) {
