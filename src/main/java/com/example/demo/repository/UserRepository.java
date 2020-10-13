@@ -18,6 +18,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
     List<User> deleteByName(String name);
 
     @Modifying
+    @Query(value = "SELECT * FROM user", nativeQuery = true)
+    List<User> selectAllFromUser();
+
+    @Modifying
     @Query(value = "INSERT INTO user (name, age, email) VALUES (:name, :age, :email)", nativeQuery = true)
     @Transactional
     void addNewUser(@Param("name") String name, @Param("age") int age, @Param("email") String email);

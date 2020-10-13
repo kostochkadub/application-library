@@ -53,8 +53,16 @@ class UserRepositoryTest {
         userDeleteByName = userRepository.findAll();
         Assertions.assertEquals( 9, userDeleteByName.size());
         System.out.println(userDeleteByName);
-
 }
+
+    @Test
+    void selectAllFromUser() {
+        List<User> userList = getUserCollection();
+        userRepository.saveAll(userList);
+
+        List<User> usersFromTable = userRepository.selectAllFromUser();
+        Assertions.assertTrue( userList.equals(usersFromTable));
+    }
 
 
     private List<User> getUserCollection() {
@@ -72,5 +80,6 @@ class UserRepositoryTest {
 
         return userCollection;
     }
+
 
 }
