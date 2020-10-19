@@ -19,8 +19,8 @@ public class DemoApplication {
     public static void main(String[] args) throws SQLException {
         SpringApplication.run(DemoApplication.class, args);
 
-       /*
-       String id = "1";
+
+        /*String id = "1";
         DataSource dataSource = prepareDataSource();
         List<User> users = new ArrayList<>();
         try (Connection connection = dataSource.getConnection()) {
@@ -31,7 +31,6 @@ public class DemoApplication {
                         User user = new User();
 
                         user.setName(resultSet.getString("name"));
-                        user.setAge((int) resultSet.getLong("age"));
 
                         System.out.println(user);
                         users.add(user);
@@ -39,8 +38,8 @@ public class DemoApplication {
                 }
             }
         }
-        System.out.println(users);
-        */
+        System.out.println(users);*/
+
     }
 
 
@@ -48,8 +47,8 @@ public class DemoApplication {
     private static DataSource prepareDataSource() throws SQLException {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setUser("root");
-        dataSource.setPassword("kkkk");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/UserDatabase");
+        dataSource.setPassword("root");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/user_schema");
         dataSource.setServerTimezone("UTC");
         return dataSource;
     }

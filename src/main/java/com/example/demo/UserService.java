@@ -20,7 +20,7 @@ public class UserService {
     public List<User> addNewUserFromString(String userParam) {
         if (userParam.matches("^[a-zA-Zа-яА-Я]+\\s[0-9]{1,3}\\s[a-zA-Z0-9]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+")) {
             String[] words = userParam.split("\\s");
-            userRepository.addNewUser(words[0], Integer.parseInt(words[1]), words[2]);
+            userRepository.addNewUser(words[0]);
             return userRepository.findAll();
         } else {
             System.out.println("Неверный формат");

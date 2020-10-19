@@ -13,18 +13,18 @@ import java.util.List;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    List<User> findAllByAgeGreaterThan(int minAge);
-    List<User> findAllByAgeBetween(int minAge, int maxAge);
-    List<User> deleteByName(String name);
+    //List<User> findAllByAgeGreaterThan(int minAge);
+    //List<User> findAllByAgeBetween(int minAge, int maxAge);
+   // List<User> deleteByName(String name);
 
-    @Modifying
+
     @Query(value = "SELECT * FROM user", nativeQuery = true)
     List<User> selectAllFromUser();
 
     @Modifying
-    @Query(value = "INSERT INTO user (name, age, email) VALUES (:name, :age, :email)", nativeQuery = true)
+    @Query(value = "INSERT INTO user (name) VALUES (:name)", nativeQuery = true)
     @Transactional
-    void addNewUser(@Param("name") String name, @Param("age") int age, @Param("email") String email);
+    void addNewUser(@Param("name") String name);
 }
 
 

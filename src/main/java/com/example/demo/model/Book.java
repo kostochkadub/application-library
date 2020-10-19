@@ -6,21 +6,23 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class User {
-
+public class Book {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String name;
+    private String author;
 
-    public User(){
-
+    public Book(Integer id, String title, String author) {
+        this.id = id;
+        this.name = title;
+        this.author = author;
     }
 
-    public User(Integer id, String name) {
-        this.id = id;
-        this.name = name;
+    public Book() {
+
     }
 
     public Integer getId() {
@@ -39,15 +41,20 @@ public class User {
         this.name = name;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Book{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
                 '}';
     }
-
-
-
 }
