@@ -29,7 +29,7 @@ public class UserService {
 
     }
 
-    public User getById(Long id){
+    public User getById(Integer id) {
         return userRepository.getOne(id);
     }
 }

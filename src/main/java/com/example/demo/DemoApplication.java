@@ -44,12 +44,12 @@ public class DemoApplication {
 
 
 
-    private static DataSource prepareDataSource() throws SQLException {
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUser("root");
-        dataSource.setPassword("root");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/user_schema");
-        dataSource.setServerTimezone("UTC");
-        return dataSource;
-    }
+    //private static DataSource prepareDataSource() throws SQLException {
+        //MysqlDataSource dataSource = new MysqlDataSource();
+        //dataSource.setUser("root");
+        //dataSource.setPassword("root");
+        //dataSource.setUrl("jdbc:mysql://localhost:3306/user_schema");
+        //dataSource.setServerTimezone("UTC");
+        //return dataSource;
+    //}
 }

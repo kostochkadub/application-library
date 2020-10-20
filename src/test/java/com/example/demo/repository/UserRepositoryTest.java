@@ -19,8 +19,6 @@ class UserRepositoryTest {
     @Autowired
     UserRepository userRepository;
 
-
-
     @Test
     void selectAllFromUser() {
         List<User> userList = getUserCollection();
@@ -43,9 +41,9 @@ class UserRepositoryTest {
     }
     private List<Book> getBookCollection() {
         ArrayList<Book> bookCollection= new ArrayList<>();
-        bookCollection.add(new Book(null, "Хроники Дюны", "Фрэнк Герберт"));
-        bookCollection.add(new Book(null, "Война и мир", "Лев Толстой"));
-        bookCollection.add(new Book(null, "Тестирование Дот Ком", "Роман Савин"));
+        bookCollection.add(new Book(null, "Хроники Дюны", 1));
+        bookCollection.add(new Book(null, "Война и мир", 2));
+        bookCollection.add(new Book(null, "Тестирование Дот Ком", 3));
 
         return bookCollection;
     }

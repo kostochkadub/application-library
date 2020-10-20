@@ -12,13 +12,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
-    private String author;
+    private String title;
+    private Integer authorId;
 
-    public Book(Integer id, String title, String author) {
+    public Book(Integer id, String title, Integer authorId) {
         this.id = id;
-        this.name = title;
-        this.author = author;
+        this.title = title;
+        this.authorId = authorId;
     }
 
     public Book() {
@@ -33,28 +33,28 @@ public class Book {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String name) {
+        this.title = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public Integer getAuthorId() {
+        return authorId;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setAuthorId(Integer author) {
+        this.authorId = author;
     }
 
     @Override
     public String toString() {
         return "Book{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", author='" + author + '\'' +
+                ", name='" + title + '\'' +
+                ", author='" + authorId + '\'' +
                 '}';
     }
 }

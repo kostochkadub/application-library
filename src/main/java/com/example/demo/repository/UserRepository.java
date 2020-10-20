@@ -11,12 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-
-    //List<User> findAllByAgeGreaterThan(int minAge);
-    //List<User> findAllByAgeBetween(int minAge, int maxAge);
-   // List<User> deleteByName(String name);
-
+public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query(value = "SELECT * FROM user", nativeQuery = true)
     List<User> selectAllFromUser();

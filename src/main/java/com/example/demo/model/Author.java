@@ -1,26 +1,20 @@
 package com.example.demo.model;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class User {
-
+public class Author {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String name;
 
-    public User() {
+    private String author;
 
-    }
-
-    public User(Integer id, String name) {
+    public Author(Integer id, String author) {
         this.id = id;
-        this.name = name;
+        this.author = author;
     }
 
     public Integer getId() {
@@ -31,22 +25,19 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAuthor(String author) {
+        this.author = author;
     }
-
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Author{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", author='" + author + '\'' +
                 '}';
     }
-
-
 }
